@@ -20,7 +20,9 @@ function onSubmit(e) {
 }
 function GetData() {
   const data = JSON.parse(localStorage.getItem('feedback-form-state'));
-  email.value = data.email;
-  message.value = data.message;
+  if (data) {
+    email.value = data.email;
+    message.value = data.message;
+  }
 }
 GetData();
